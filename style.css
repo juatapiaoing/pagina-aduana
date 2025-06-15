@@ -1,0 +1,247 @@
+/* --- Variables y Estilos Globales --- */
+:root {
+    --primary-color: #0d47a1; /* Azul institucional oscuro */
+    --primary-light: #1976d2; /* Azul más claro para interacciones */
+    --background-color: #f8f9fa; /* Gris muy claro de fondo */
+    --card-background: #ffffff;
+    --text-primary: #212529; /* Negro suave para texto principal */
+    --text-secondary: #6c757d; /* Gris para texto secundario */
+    --border-color: #dee2e6; /* Color de borde sutil */
+    --success-color: #198754; /* Verde para confirmaciones */
+    --font-family: 'Roboto', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* --- Encabezado Principal --- */
+.main-header {
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo svg {
+    margin-right: 0.75rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.main-nav .user-profile {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+.main-nav .user-profile:hover {
+    background-color: #0d47a1;
+    color: white;
+}
+
+/* --- Estilos del Portal Principal --- */
+.portal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.portal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.portal-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+.portal-header p { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+/* --- Grid de Módulos --- */
+.modulos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.modulo-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.modulo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-light);
+}
+
+.card-icon {
+    flex-shrink: 0;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.card-content h3 { margin: 0 0 0.5rem 0; font-size: 1.2rem; font-weight: 500; }
+.card-content p { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
+.card-action { display: block; margin-top: 1rem; font-weight: 500; color: var(--primary-light); opacity: 0; transition: opacity 0.2s ease-in-out; align-self: flex-end; padding-top: 1rem; }
+.modulo-card:hover .card-action { opacity: 1; }
+
+/* --- ESTILOS PARA PÁGINAS DE MÓDULOS --- */
+.module-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.module-header-icon {
+    flex-shrink: 0;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.module-header-text h1 { font-size: 2rem; margin: 0; }
+.module-header-text p { font-size: 1.1rem; color: var(--text-secondary); margin: 0; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+}
+textarea { resize: vertical; min-height: 120px; }
+input[type="file"] {
+    padding: 0;
+    border: none;
+}
+input[type="file"]::file-selector-button {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+input[type="file"]::file-selector-button:hover {
+    background-color: #e9ecef;
+}
+
+.form-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; }
+.btn { text-decoration: none; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 500; border-radius: 6px; cursor: pointer; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
+.btn-primary { background-color: var(--primary-color); color: white; }
+.btn-primary:hover { background-color: var(--primary-light); }
+.btn-secondary { background-color: transparent; color: var(--text-secondary); border: 1px solid var(--border-color); }
+.btn-secondary:hover { background-color: var(--background-color); color: var(--text-primary); }
+
+/* --- ESTILOS PARA MENSAJE DE ÉXITO --- */
+.form-success-message {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 3rem;
+}
+.success-icon {
+    color: var(--success-color);
+    background-color: rgba(25, 135, 84, 0.1);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.success-text h3 { margin: 0 0 0.5rem 0; font-size: 1.75rem; color: var(--text-primary); }
+.success-text p { margin: 0 0 2rem 0; color: var(--text-secondary); max-width: 400px; }
+
+/* --- Pie de Página --- */
+.main-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}

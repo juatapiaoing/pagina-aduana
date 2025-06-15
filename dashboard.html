@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control | Gestión Aduanera</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+         <div class="header-content">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Gestión Aduanera (Admin)</span>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="dashboard-container">
+            <div class="module-header">
+                <div class="module-header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <div class="module-header-text">
+                    <h1>Información en Tiempo Real</h1>
+                    <p>Vista general del estado del paso fronterizo Pehuenche.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Vehículos Procesados (Hoy)</h4>
+                    <p class="stat-number">1,204</p>
+                    <span class="stat-change positive">+5% vs ayer</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Declaraciones Pendientes</h4>
+                    <p class="stat-number">89</p>
+                    <span class="stat-change neutral">Estable</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Tiempo de Espera Promedio</h4>
+                    <p class="stat-number">2h 15m</p>
+                    <span class="stat-change negative">-25m vs ayer</span>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h3>Últimos Trámites Registrados</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Trámite</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#84021</td>
+                            <td>Declaración Jurada</td>
+                            <td><span class="status approved">Aprobado</span></td>
+                            <td>15/06/2025 10:30</td>
+                        </tr>
+                        <tr>
+                            <td>#84020</td>
+                            <td>Manifiesto de Carga</td>
+                            <td><span class="status pending">En Revisión</span></td>
+                            <td>15/06/2025 10:28</td>
+                        </tr>
+                         <tr>
+                            <td>#84019</td>
+                            <td>Salida de Vehículo</td>
+                            <td><span class="status approved">Aprobado</span></td>
+                            <td>15/06/2025 10:25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <p>© 2025 Servicio Nacional de Aduanas. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

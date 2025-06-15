@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifiesto de Carga | Gestión Aduanera</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+         <div class="header-content">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Gestión Aduanera</span>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="module-container">
+            <div class="module-header">
+                <div class="module-header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <div class="module-header-text">
+                    <h1>Gestión de Manifiesto de Carga</h1>
+                    <p>Declare la carga transportada antes de su llegada a la frontera.</p>
+                </div>
+            </div>
+            <form id="manifiesto-form">
+                <div class="form-group">
+                    <label for="rut-empresa">RUT de la Empresa de Transporte</label>
+                    <input type="text" id="rut-empresa" name="rut-empresa" placeholder="Ej: 76.123.456-7" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero-manifiesto">Número de Manifiesto</label>
+                    <input type="text" id="numero-manifiesto" name="numero-manifiesto" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion-carga">Descripción General de la Carga</label>
+                    <textarea id="descripcion-carga" name="descripcion-carga" rows="4" placeholder="Ej: 20 toneladas de cobre, pallets de productos electrónicos, etc." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="adjunto">Adjuntar Documento del Manifiesto (PDF, XML)</label>
+                    <input type="file" id="adjunto" name="adjunto" accept=".pdf,.xml" required>
+                </div>
+                <div class="form-actions">
+                    <a href="index.html" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Registrar Manifiesto</button>
+                </div>
+            </form>
+            <div id="success-message-manifiesto" class="form-success-message">
+                 <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                 </div>
+                 <div class="success-text">
+                    <h3>Manifiesto Registrado Correctamente</h3>
+                    <p>Su manifiesto de carga ha sido ingresado al sistema para su revisión.</p>
+                 </div>
+                 <a href="index.html" class="btn btn-primary">Volver al Portal</a>
+            </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <p>© 2025 Servicio Nacional de Aduanas. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

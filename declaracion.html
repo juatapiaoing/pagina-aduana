@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declaración Jurada y SAG | Gestión Aduanera</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+         <div class="header-content">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Gestión Aduanera</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="module-container">
+            <div class="module-header">
+                <div class="module-header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <div class="module-header-text">
+                    <h1>Declaración Jurada y SAG</h1>
+                    <p>Complete los campos requeridos para su ingreso al país.</p>
+                </div>
+            </div>
+
+            <form id="declaracion-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo del Pasajero</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Según figura en su documento de identidad" required>
+                </div>
+                <div class="form-group">
+                    <label for="documento">Número de Documento (RUT o Pasaporte)</label>
+                    <input type="text" id="documento" name="documento" placeholder="Ej: 12.345.678-9" required>
+                </div>
+                <div class="form-group">
+                    <label for="productos">¿Ingresa productos de origen animal o vegetal?</label>
+                    <select id="productos" name="productos" required>
+                        <option value="">-- Por favor, seleccione una opción --</option>
+                        <option value="no">No, no ingreso productos</option>
+                        <option value="si">Sí, y los declararé a continuación</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Si su respuesta fue "Sí", describa los productos</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" placeholder="Ej: 1kg de queso envasado al vacío, 2 manzanas, etc."></textarea>
+                </div>
+                <div class="form-actions">
+                    <a href="index.html" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Enviar Declaración</button>
+                </div>
+            </form>
+
+            <div id="success-message" class="form-success-message">
+                 <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                 </div>
+                 <div class="success-text">
+                    <h3>Declaración Enviada con Éxito</h3>
+                    <p>Sus datos han sido registrados en el sistema. Recibirá una copia en su correo electrónico.</p>
+                 </div>
+                 <a href="index.html" class="btn btn-primary">Volver al Portal</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Servicio Nacional de Aduanas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('declaracion-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = document.getElementById('declaracion-form');
+            const successMessage = document.getElementById('success-message');
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            setTimeout(() => {
+                form.style.display = 'none';
+                successMessage.style.display = 'flex';
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
